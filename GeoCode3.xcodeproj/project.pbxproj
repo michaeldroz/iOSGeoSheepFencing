@@ -14,6 +14,10 @@
 		2139984E1A12D02900FCAAD6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2139984D1A12D02900FCAAD6 /* Images.xcassets */; };
 		213998511A12D02900FCAAD6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2139984F1A12D02900FCAAD6 /* LaunchScreen.xib */; };
 		2139985D1A12D02900FCAAD6 /* GeoCode3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2139985C1A12D02900FCAAD6 /* GeoCode3Tests.m */; };
+		213998671A12D03600FCAAD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213998661A12D03600FCAAD6 /* Foundation.framework */; };
+		213998691A12D03D00FCAAD6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213998681A12D03D00FCAAD6 /* CoreLocation.framework */; };
+		2139986B1A12D05100FCAAD6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2139986A1A12D05100FCAAD6 /* MapKit.framework */; };
+		2139986D1A12D05800FCAAD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2139986C1A12D05800FCAAD6 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		213998561A12D02900FCAAD6 /* GeoCode3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoCode3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2139985B1A12D02900FCAAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2139985C1A12D02900FCAAD6 /* GeoCode3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoCode3Tests.m; sourceTree = "<group>"; };
+		213998661A12D03600FCAAD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		213998681A12D03D00FCAAD6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2139986A1A12D05100FCAAD6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2139986C1A12D05800FCAAD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2139986D1A12D05800FCAAD6 /* UIKit.framework in Frameworks */,
+				2139986B1A12D05100FCAAD6 /* MapKit.framework in Frameworks */,
+				213998691A12D03D00FCAAD6 /* CoreLocation.framework in Frameworks */,
+				213998671A12D03600FCAAD6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,10 @@
 		213998341A12D02900FCAAD6 = {
 			isa = PBXGroup;
 			children = (
+				2139986C1A12D05800FCAAD6 /* UIKit.framework */,
+				2139986A1A12D05100FCAAD6 /* MapKit.framework */,
+				213998681A12D03D00FCAAD6 /* CoreLocation.framework */,
+				213998661A12D03600FCAAD6 /* Foundation.framework */,
 				2139983F1A12D02900FCAAD6 /* GeoCode3 */,
 				213998591A12D02900FCAAD6 /* GeoCode3Tests */,
 				2139983E1A12D02900FCAAD6 /* Products */,
