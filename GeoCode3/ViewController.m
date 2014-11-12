@@ -38,10 +38,7 @@
     float spanY = 0.58;
     self.location = self.locationManager.location;
     //a quick nslog to shus us that it's doing something
-    NSLog(@"About to print self.location.description");
     NSLog(@"%@", self.location.description);
-    NSLog(@"This is a log to see where I am at");
-    NSLog(@"Test test test test");
     MKCoordinateRegion region;
     region.center.latitude = self.locationManager.location.coordinate.latitude;
     region.center.longitude = self.locationManager.location.coordinate.longitude;
@@ -52,24 +49,18 @@
 
 - (IBAction)monitorThisRegion:(UIBarButtonItem *)sender  {
 
-   NSLog(@"I am in the montiroThisRegion method...");
    float theRadius = 100.0;
    NSString *theIdentifier = @"atWork";
-    NSLog(@"Set radius and the identifier");
    CLLocationCoordinate2D centre;
     centre.latitude = self.mapView.centerCoordinate.latitude;
     centre.longitude = self.mapView.centerCoordinate.longitude;
-    NSLog(@"set the centre.latitude and centre.long");
     CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centre
                                                                  radius:theRadius
                                                              identifier:theIdentifier
                             ];
-    NSLog(@"Set the monitoring region with radius and identifier");
     //Then cast the instance for use with your CLLocationManager instance
    [self.locationManager startMonitoringForRegion:(CLRegion *)region];
-   NSLog(@"Just claled the startMonitoringFOrRegion method. Shit might start breaking");
-    
-    
+ 
     //Decprecated method.
     /*[self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:centre radius:20.0 identifier:@"Work" ]]; */
 }
@@ -81,7 +72,7 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    NSLog(@"Welceom 444444 4444 444444 444444444444444444444444444 to %@", region.identifier);
+    NSLog(@"Now executing didEnterRegion %@", region.identifier);
     NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
     [standardDefaults setObject:@"Yes" forKey:@"atWork"];
     self.workLabel.text = @"You are at Work";
@@ -93,12 +84,12 @@
     NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
     [standardDefaults setObject:@"No" forKey:@"atWork"];
     self.workLabel.text = @"You are not at Work";
-    NSLog(@"YOU HAVE EXXXXXXXXXXXXXXXXXXXXXXITED");
+    NSLog(@"Now executing didExitRegion");
     [standardDefaults synchronize];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
-    NSLog(@"Now monitoring for FUCKKKKKKKKKKK%@", region.identifier);
+    NSLog(@"Now executing didStartMonitoringForRegion, printing region%@", region.identifier);
 }
 
 
