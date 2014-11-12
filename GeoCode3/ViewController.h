@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet CLLocation *location;
 
 - (IBAction)updateLocation:(id)sender;
-
 - (IBAction)monitorThisRegion:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *workLabel;
 
 @end

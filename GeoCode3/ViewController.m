@@ -49,6 +49,7 @@
     [self.mapView setRegion:region animated:YES];
 }
 
+
 - (IBAction)monitorThisRegion:(UIBarButtonItem *)sender  {
 
    NSLog(@"I am in the montiroThisRegion method...");
@@ -68,6 +69,7 @@
    [self.locationManager startMonitoringForRegion:(CLRegion *)region];
    NSLog(@"Just claled the startMonitoringFOrRegion method. Shit might start breaking");
     
+    
     //Decprecated method.
     /*[self.locationManager startMonitoringForRegion:[[CLRegion alloc] initCircularRegionWithCenter:centre radius:20.0 identifier:@"Work" ]]; */
 }
@@ -79,6 +81,7 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    NSLog(@"Welceom 444444 4444 444444 444444444444444444444444444 to %@", region.identifier);
     NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
     [standardDefaults setObject:@"Yes" forKey:@"atWork"];
     self.workLabel.text = @"You are at Work";
@@ -103,5 +106,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
