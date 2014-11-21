@@ -31,6 +31,7 @@
     }
     [self.locationManager startUpdatingLocation];
     
+    self.locationStore = [[LocationStore alloc] init];
 }
 
 - (IBAction)updateLocation:(UIBarButtonItem *)sender {
@@ -44,8 +45,14 @@
     region.center.longitude = self.locationManager.location.coordinate.longitude;
     region.span = MKCoordinateSpanMake(spanX, spanY);
     [self.mapView setRegion:region animated:YES];
+    [self.locationStore queryNearbyLocations:self.location radius:100.0 withBlock:^(NSString *key, CLLocation *location) {
+        NSLog(@"Key '%@' entered the search area and is at location lat:%f,lon:%f", key, location.coordinate.latitude, location.coordinate.longitude);
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = location.coordinate;
+        point.title = key;
+        [self.mapView addAnnotation:point];
+    }];
 }
-
 
 - (IBAction)monitorThisRegion:(UIBarButtonItem *)sender  {
 
@@ -96,6 +103,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addEvent:(id)sender {
+    CLLocation *location = self.locationManager.location;
+
+    // Fuzz location by a small random amount to create new points
+    CLLocationDegrees latOffset = (arc4random_uniform(100)-50.0) / 1000.0;
+    CLLocationDegrees lonOffset = (arc4random_uniform(100)-50.0) / 1000.0;
+    CLLocation *newLocation = [[CLLocation alloc] initWithLatitude:location.coordinate.latitude + latOffset
+                                                         longitude:location.coordinate.longitude + lonOffset];
+
+    NSString *key = [[NSUUID alloc] init].UUIDString;
+    [self.locationStore addLocation:newLocation forKey:key];
 }
 
 
