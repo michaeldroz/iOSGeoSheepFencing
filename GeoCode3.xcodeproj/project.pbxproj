@@ -18,6 +18,9 @@
 		213998691A12D03D00FCAAD6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213998681A12D03D00FCAAD6 /* CoreLocation.framework */; };
 		2139986B1A12D05100FCAAD6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2139986A1A12D05100FCAAD6 /* MapKit.framework */; };
 		2139986D1A12D05800FCAAD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2139986C1A12D05800FCAAD6 /* UIKit.framework */; };
+		B7C254B1FEA0973B3A37A1BD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F22DC450A0AB6D1E90A1C409 /* libPods.a */; };
+		DE5259711A1F03B5006EF051 /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5259701A1F03B5006EF051 /* GeoFire.framework */; };
+		DE5259741A1F09D7006EF051 /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5259731A1F09D7006EF051 /* LocationStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		213998681A12D03D00FCAAD6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2139986A1A12D05100FCAAD6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2139986C1A12D05800FCAAD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65E2657421327AF3984F522A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8C6A069FB9351AE24375421D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DE5259701A1F03B5006EF051 /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GeoFire.framework; sourceTree = "<group>"; };
+		DE5259721A1F09D6006EF051 /* GeoCode3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoCode3-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE5259731A1F09D7006EF051 /* LocationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
+		F22DC450A0AB6D1E90A1C409 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,8 @@
 				2139986B1A12D05100FCAAD6 /* MapKit.framework in Frameworks */,
 				213998691A12D03D00FCAAD6 /* CoreLocation.framework in Frameworks */,
 				213998671A12D03600FCAAD6 /* Foundation.framework in Frameworks */,
+				DE5259711A1F03B5006EF051 /* GeoFire.framework in Frameworks */,
+				B7C254B1FEA0973B3A37A1BD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +83,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B3BE9CB8FEF14FEE76F1BCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F22DC450A0AB6D1E90A1C409 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		213998341A12D02900FCAAD6 = {
 			isa = PBXGroup;
 			children = (
+				DE5259701A1F03B5006EF051 /* GeoFire.framework */,
 				2139986C1A12D05800FCAAD6 /* UIKit.framework */,
 				2139986A1A12D05100FCAAD6 /* MapKit.framework */,
 				213998681A12D03D00FCAAD6 /* CoreLocation.framework */,
@@ -82,6 +102,8 @@
 				2139983F1A12D02900FCAAD6 /* GeoCode3 */,
 				213998591A12D02900FCAAD6 /* GeoCode3Tests */,
 				2139983E1A12D02900FCAAD6 /* Products */,
+				412E749DBF1A3879908DECBD /* Pods */,
+				0B3BE9CB8FEF14FEE76F1BCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +123,12 @@
 				213998451A12D02900FCAAD6 /* AppDelegate.m */,
 				213998471A12D02900FCAAD6 /* ViewController.h */,
 				213998481A12D02900FCAAD6 /* ViewController.m */,
+				DE5259731A1F09D7006EF051 /* LocationStore.swift */,
 				2139984A1A12D02900FCAAD6 /* Main.storyboard */,
 				2139984D1A12D02900FCAAD6 /* Images.xcassets */,
 				2139984F1A12D02900FCAAD6 /* LaunchScreen.xib */,
 				213998401A12D02900FCAAD6 /* Supporting Files */,
+				DE5259721A1F09D6006EF051 /* GeoCode3-Bridging-Header.h */,
 			);
 			path = GeoCode3;
 			sourceTree = "<group>";
@@ -135,6 +159,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		412E749DBF1A3879908DECBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A069FB9351AE24375421D /* Pods.debug.xcconfig */,
+				65E2657421327AF3984F522A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 213998601A12D02900FCAAD6 /* Build configuration list for PBXNativeTarget "GeoCode3" */;
 			buildPhases = (
+				5E9F1C5A582854CF21AD35E0 /* Check Pods Manifest.lock */,
 				213998391A12D02900FCAAD6 /* Sources */,
 				2139983A1A12D02900FCAAD6 /* Frameworks */,
 				2139983B1A12D02900FCAAD6 /* Resources */,
+				6DB9287D1D9B62661B87018B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,11 +265,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E9F1C5A582854CF21AD35E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB9287D1D9B62661B87018B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		213998391A12D02900FCAAD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5259741A1F09D7006EF051 /* LocationStore.swift in Sources */,
 				213998491A12D02900FCAAD6 /* ViewController.m in Sources */,
 				213998461A12D02900FCAAD6 /* AppDelegate.m in Sources */,
 				213998431A12D02900FCAAD6 /* main.m in Sources */,
@@ -298,6 +367,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -339,6 +409,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -357,21 +428,36 @@
 		};
 		213998611A12D02900FCAAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C6A069FB9351AE24375421D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GeoCode3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GeoCode3/GeoCode3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		213998621A12D02900FCAAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65E2657421327AF3984F522A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GeoCode3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GeoCode3/GeoCode3-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -428,6 +514,7 @@
 				213998621A12D02900FCAAD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		213998631A12D02900FCAAD6 /* Build configuration list for PBXNativeTarget "GeoCode3Tests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +523,7 @@
 				213998651A12D02900FCAAD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

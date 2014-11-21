@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Af7-YL-LiG"/>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v3f-EH-7Xb">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3f-EH-7Xb">
                                 <rect key="frame" x="0.0" y="0.0" width="442" height="548"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="workLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdX-vo-p5L">
@@ -39,6 +39,11 @@
                                             <action selector="monitorThisRegion:" destination="vXZ-lx-hvc" id="JWh-uY-IHr"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Add Event" id="QUE-3g-MaL">
+                                        <connections>
+                                            <action selector="addEvent:" destination="vXZ-lx-hvc" id="6EU-Pd-wkj"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -47,6 +52,7 @@
                     <connections>
                         <outlet property="location" destination="b7c-Vz-4GK" id="aqM-3T-CcE"/>
                         <outlet property="mapView" destination="v3f-EH-7Xb" id="YIR-DO-3ek"/>
+                        <outlet property="workLabel" destination="PdX-vo-p5L" id="WAE-td-zjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

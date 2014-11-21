@@ -1,0 +1,2 @@
+PODS_GEOCODE__FIREBASE_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Firebase"
+PODS_GEOCODE__FIREBASE_OTHER_LDFLAGS = -ObjC -l"c++" -l"icucore" -framework "CFNetwork" -framework "Firebase" -framework "Security" -framework "SystemConfiguration"

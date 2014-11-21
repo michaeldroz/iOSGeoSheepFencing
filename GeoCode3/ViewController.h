@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GeoCode3-Swift.h"
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -21,6 +22,8 @@
 - (IBAction)monitorThisRegion:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *workLabel;
+
+@property (strong, nonatomic) LocationStore *locationStore;
 
 @end
 
